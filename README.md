@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Démarrage
 
-## Getting Started
+## Prérequis
 
-First, run the development server:
+### Node.js
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Pour installer Node.js, rendez-vous sur le site officiel : https://nodejs.org/en/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Git
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pour installer Git, rendez-vous sur le site officiel : https://git-scm.com/downloads
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+###  Pour lancer l'application :
 
-To learn more about Next.js, take a look at the following resources:
+### Clonez le dépôt :
+Dans votre terminal, placé à l'endroit où vous stockez vos projets ( souvent www ou repos ) tapez la commande :
+`git clone git@github.com:BenjaminG95/highchart-example.git`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installez les dépendances :
+Dans votre terminal, placé dans le projet, tapez la commande : `npm install`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Démarrez l'application :
+Dans votre terminal, placé dans le projet, tapez la commande : `npm run dev`
 
-## Deploy on Vercel
+L'application se lancera dans votre navigateur par défaut à l'adresse : `http://localhost:3000`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Utilisation
+Consultez les fichiers contenus dans le dossier `src`, `app` puis `components` pour voir le component highchart.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Vous pouvez également consulter le fichier `page.tsx`, où est appelé notre component.
