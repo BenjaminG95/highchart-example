@@ -1,16 +1,19 @@
 'use client' // S'assure que le code est exécuté en mode strict
 
-import {useRef} from "react";
-import * as Highcharts from 'highcharts';
+import {useEffect, useRef} from "react";
+import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import Exporting from "highcharts/modules/exporting";
+import ExportingModule from "highcharts/modules/exporting";
 
 const HighChartComponent = ({ options }) => {
     // Crée une référence pour le composant Highcharts
     const chartComponentRef = useRef(null);
 
-    // Active le module d'exportation pour Highcharts
-    Exporting(Highcharts);
+    // use effect pour activer le module d'exportation sur le graphique seulement une fois (car les dépendances ne changent pas)
+    useEffect(() => {
+        // Active le module d'exportation pour Highcharts
+        ExportingModule(Highcharts);
+    }, []) // Les dépendances sont vides pour que le module ne soit activé qu'une seule fois
 
     // Renvoie le composant Highcharts avec les options passées en paramètre
     return (
