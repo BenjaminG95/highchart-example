@@ -5,7 +5,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import ExportingModule from "highcharts/modules/exporting";
 
-const HighChartComponent = ({options}) => {
+const HighChartComponent = ({ options }) => {
     // Crée une référence pour le composant Highcharts
     const chartComponentRef = useRef(null);
 
@@ -17,13 +17,11 @@ const HighChartComponent = ({options}) => {
     }
 
     // Renvoie le composant Highcharts avec les options passées en paramètre
-    return (
-        <HighchartsReact
-            highcharts={Highcharts}
-            options={options}
-            ref={chartComponentRef}
-        />
-    );
+    return (<HighchartsReact
+        highcharts={Highcharts}
+        options={options}
+        ref={chartComponentRef}
+    />);
 };
 
 // Exporte le composant HighChartComponent
