@@ -1,19 +1,20 @@
-'use client' // S'assure que le code est exécuté en mode strict
+'use client'; // S'assure que le code est exécuté en mode strict
 
-import {useEffect, useRef} from "react";
+import {useRef} from "react";
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import ExportingModule from "highcharts/modules/exporting";
 
-const HighChartComponent = ({ options }) => {
+const HighChartComponent = ({options}) => {
     // Crée une référence pour le composant Highcharts
     const chartComponentRef = useRef(null);
 
-    // use effect pour activer le module d'exportation sur le graphique seulement une fois (car les dépendances ne changent pas)
-    useEffect(() => {
-        // Active le module d'exportation pour Highcharts
-        ExportingModule(Highcharts);
-    }, []) // Les dépendances sont vides pour que le module ne soit activé qu'une seule fois
+    // Utilise le module d'exportation Highcharts
+    // Si Highcharts est un objet, utilise le module d'exportation Highcharts
+    // ça permet de l'initialiser une seule fois et de ne pas avoir d'erreur au reload de la page
+    if (typeof Highcharts === 'object') {
+        ExportingModule(Highcharts)
+    }
 
     // Renvoie le composant Highcharts avec les options passées en paramètre
     return (
